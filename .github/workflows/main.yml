@@ -1,13 +1,10 @@
 name: Run Selenium Script
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     
     steps:
     - name: Checkout repository
@@ -19,9 +16,11 @@ jobs:
         python-version: '3.x'
     
     - name: Install Selenium
-      run: pip install selenium
+      run: |
+        pip install selenium
     
     - name: Run Python Selenium script
+      shell: bash
       run: |
         python - <<EOF
 from selenium import webdriver
