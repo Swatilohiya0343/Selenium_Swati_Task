@@ -21,11 +21,6 @@ jobs:
     - name: Install Selenium
       run: pip install selenium
     
-    - name: Download WebDriver
-      run: |
-        wget https://msedgedriver.azureedge.net/latest/msedgedriver_linux64.zip
-        unzip msedgedriver_linux64.zip
-        sudo mv msedgedriver /usr/local/bin/
     
     - name: Run Python Selenium script
       run: |
