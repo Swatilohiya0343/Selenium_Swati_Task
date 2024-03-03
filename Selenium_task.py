@@ -10,7 +10,7 @@ browser_path = "C:\\Program Files (x86)\\Microsoft\\Edge Beta\\Application\\msed
 option = EdgeOptions()
 option.use_chromium = True  
 option.binary_location = browser_path   
-driver= Edge(executable_path = chrome_driver_path, options = option)
+driver= Edge(chrome_driver_path, options = option)
 url="https://www.cbse.gov.in/cbsenew/question-paper.html"
 
 
