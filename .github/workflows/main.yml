@@ -8,7 +8,7 @@ on:
 jobs:
   selenium:
     runs-on: ubuntu-latest
- 
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -31,4 +31,5 @@ jobs:
           pip install selenium
 
       - name: Run Selenium script
-        run: python Selenium_task.py
+        run: python Selenium_Task.py
+
