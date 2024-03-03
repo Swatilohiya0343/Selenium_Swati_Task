@@ -11,23 +11,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
- 
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
 
-      - name: Install dependencies
-        run: |
-          pip install msedge-selenium-tools
-          pip install selenium
+      - name: Install chromedriver_binary
+        run: pip install chromedriver-binary==<version>  # Replace <version> with the appropriate version
 
-      - name: Add msedgedriver.exe to PATH
-        run: |
-          echo "$PWD/webdriver" >> $GITHUB_PATH
-
-      - name: Set executable permissions for msedgedriver.exe
-        run: chmod +x ./webdriver/msedgedriver.exe
+      - name: Install Selenium
+        run: pip install selenium
 
       - name: Run Selenium script
         run: python Selenium_task.py
