@@ -3,7 +3,7 @@ from time import sleep
 
 from selenium.common.exceptions  import NoSuchElementException
 url="https://www.cbse.gov.in/cbsenew/question-paper.html"
-browser=webdriver.Edge(r"C:\Users\Swati Lohiya\Downloads\edgedriver_win64 (1)\msedgedriver.exe")
+browser=webdriver.Edge("msedgedriver.exe")
 browser.get(url)
 for i in range(1,11):
     try:
