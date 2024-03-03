@@ -26,5 +26,8 @@ jobs:
         run: |
           echo "$PWD/webdriver" >> $GITHUB_PATH
 
+      - name: Set executable permissions for msedgedriver.exe
+        run: chmod +x ./webdriver/msedgedriver.exe
+
       - name: Run Selenium script
         run: python Selenium_task.py
