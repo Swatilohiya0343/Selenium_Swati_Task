@@ -1,36 +1,33 @@
-name: Selenium Test
+name: Selenium Tests
 
 on:
   push:
     branches:
       - main
 
-jobs: 
+jobs:
   selenium:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2 
+        uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
 
-      - name: Install Chrome browser
+      - name: Download ChromeDriver
         run: |
-          sudo apt update
-          sudo apt install -y google-chrome-stable
-
-      - name: Install ChromeDriver
-        run: |
-          CHROMEDRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-          curl -o /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
-          sudo unzip /tmp/chromedriver_linux64.zip -d /usr/local/bin/
+          CHROME_VERSION=$(google-chrome --version | grep -oP '(?<=Google Chrome )[\d.]+')
+          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+          wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -O /tmp/chromedriver.zip
+          unzip /tmp/chromedriver.zip -d /tmp
+          sudo mv /tmp/chromedriver /usr/local/bin/chromedriver
           sudo chmod +x /usr/local/bin/chromedriver
 
       - name: Install Selenium
         run: pip install selenium
 
-      - name: Run Selenium script
+      - name: Run Selenium tests
         run: python Selenium_task.py
