@@ -17,10 +17,9 @@ jobs:
         with:
           python-version: 3.x
 
-      - name: Download ChromeDriver
+      - name: Download and set up ChromeDriver
         run: |
-          CHROME_VERSION=$(google-chrome --version | grep -oP '(?<=Google Chrome )[\d.]+')
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+          CHROMEDRIVER_VERSION="122.0.6261.94"
           wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -O /tmp/chromedriver.zip
           unzip /tmp/chromedriver.zip -d /tmp
           sudo mv /tmp/chromedriver /usr/local/bin/chromedriver
@@ -29,5 +28,5 @@ jobs:
       - name: Install Selenium
         run: pip install selenium
 
-      - name: Run Selenium tests
-        run: python Selenium_task.py
+      - name: Run Selenium script
+        run: python Seleniem_task
