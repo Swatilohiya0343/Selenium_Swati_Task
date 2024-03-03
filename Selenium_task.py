@@ -1,20 +1,22 @@
 from selenium import webdriver
 from time import sleep
-from msedge.selenium_tools import Edge, EdgeOptions
+
+from selenium.webdriver.edge import service
 from selenium.webdriver.common.keys import Keys
 
 from selenium.common.exceptions  import NoSuchElementException
+option=webdriver.EdgeOptions()
 count = 1
-chrome_driver_path = "./webdriver/msedgedriver.exe"
+chrome_driver_path =service.Service(r'C:\Users\Administrator\Desktop\msedgedriver.exe')
 browser_path = "C:\\Program Files (x86)\\Microsoft\\Edge Beta\\Application\\msedge.exe" 
-option = EdgeOptions()
-option.use_chromium = True  
+
+
 option.binary_location = browser_path   
-driver= Edge(chrome_driver_path, options = option)
+browser= webdriver.Edge(service=chrome_driver_path, options = option)
 url="https://www.cbse.gov.in/cbsenew/question-paper.html"
 
 
-driver.get(url)
+browser.get(url)
 for i in range(1,11):
     try:
         page1=browser.find_element_by_xpath('//*[@id="cbp-ntaccordion"]/li['+str(i)+']/h3')
