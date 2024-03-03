@@ -5,7 +5,7 @@ from selenium.common.exceptions  import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 options = Options()
 options.binary_location = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
-browser= webdriver.Chrome(chrome_options=options, executable_path="C:/Utility/BrowserDrivers/chromedriver.exe", )
+browser= webdriver.Chrome(options=options, executable_path="C:/Utility/BrowserDrivers/chromedriver.exe", )
 
 
 
