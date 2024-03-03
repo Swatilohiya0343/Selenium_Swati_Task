@@ -23,4 +23,4 @@ jobs:
           pip install selenium==4.4.3
 
       - name: Run Selenium script
-        run: python Selenium_task.py
+        run: python Selenium_task.py 
