@@ -7,7 +7,7 @@ url="https://www.cbse.gov.in/cbsenew/question-paper.html"
 webdriver_path = "msedgedriver.exe"
 
 # Initialize Edge WebDriver with the full path to the WebDriver executable
-browser = webdriver.Edge(executable_path=webdriver_path)
+browser = webdriver.Edge(executable_path=webdriver_path) 
 browser.get(url)
 for i in range(1,11):
     try:
