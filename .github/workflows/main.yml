@@ -8,7 +8,7 @@ on:
 jobs:
   selenium:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -20,7 +20,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install msedge-selenium-tools
-          pip install selenium==4.4.3
+          pip install selenium
+
+      - name: Add msedgedriver.exe to PATH
+        run: |
+          echo "$PWD/webdriver" >> $GITHUB_PATH
 
       - name: Run Selenium script
-        run: python Selenium_task.py 
+        run: python Selenium_task.py
