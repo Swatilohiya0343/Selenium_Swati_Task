@@ -23,4 +23,4 @@ jobs:
           pip install selenium
 
       - name: Run Selenium script
-        run: python selenium_script.py
+        run: python Selenium_task.py
