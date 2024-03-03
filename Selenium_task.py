@@ -3,9 +3,13 @@ from time import sleep
 
 from selenium.common.exceptions  import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
-options = Options()
-options.binary_location = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
-browser= webdriver.Chrome()
+
+chrome_options = Options()
+chrome_options.binary_location = '/usr/bin/google-chrome'  # Specify Chrome binary location
+chrome_options.add_argument('--headless')  # Run Chrome in headless mode
+
+browser = webdriver.Chrome(options=chrome_options)
+
 
 
 
