@@ -29,4 +29,4 @@ jobs:
         run: pip install selenium
 
       - name: Run Selenium script
-        run: python Seleniem_task
+        run: python Seleniem_task.py
