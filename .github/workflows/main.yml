@@ -31,5 +31,5 @@ jobs:
           pip install selenium
 
       - name: Run Selenium script
-        run: python Selenium_Task.py
+        run: python Selenium_task.py
 
