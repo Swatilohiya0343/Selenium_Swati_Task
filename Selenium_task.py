@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 
 from selenium.common.exceptions  import NoSuchElementException
 count = 1
-chrome_driver_path = "Selenium_Swati_Task/msedgedriver.exe"
+chrome_driver_path = "./webdriver/msedgedriver.exe"
 browser_path = "C:\\Program Files (x86)\\Microsoft\\Edge Beta\\Application\\msedge.exe" 
 option = EdgeOptions()
 option.use_chromium = True  
