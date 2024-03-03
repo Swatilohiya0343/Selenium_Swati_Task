@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install msedge-selenium-tools
-          pip install selenium
+          pip install selenium==4.4.3
 
       - name: Run Selenium script
         run: python Selenium_task.py
