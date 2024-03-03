@@ -1,18 +1,14 @@
 from selenium import webdriver
 from time import sleep
+from selenium import webdriver
+import chromedriver_binary  # Adds chromedriver binary to path
 
-from selenium.webdriver.edge import service
-from selenium.webdriver.common.keys import Keys
+browser = webdriver.Chrome()
 
 from selenium.common.exceptions  import NoSuchElementException
-option=webdriver.EdgeOptions()
-count = 1
-chrome_driver_path =service.Service(r'C:\Users\Administrator\Desktop\msedgedriver.exe')
-browser_path = "C:\\Program Files (x86)\\Microsoft\\Edge Beta\\Application\\msedge.exe" 
 
 
-option.binary_location = browser_path   
-browser= webdriver.Edge(service=chrome_driver_path, options = option)
+
 url="https://www.cbse.gov.in/cbsenew/question-paper.html"
 
 
